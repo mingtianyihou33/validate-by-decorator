@@ -1,0 +1,27 @@
+{
+  "name": "validate-by-decorator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mingtianyihou33/validate-by-decorator.git",
+  "author": "liumingyi <liumingyi1428@126.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.3",
+    "ts-node-dev": "^1.0.0-pre.42",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
+  },
+  "scripts": {
+    "start": "ts-node-dev $NODE_DEBUG_OPTION ./src/index.ts -P tsconfig.json --no-cache",
+    "build": "tsc -P tsconfig.json && node ./dist/index.js",
+    "tslint": "tslint --fix -p tsconfig.json"
+  },
+  "dependencies": {
+    "async-validator": "^3.1.0",
+    "koa": "^2.8.1",
+    "koa-body": "^4.1.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-xtime": "^1.0.0"
+  }
+}
