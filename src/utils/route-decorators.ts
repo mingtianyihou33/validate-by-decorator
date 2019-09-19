@@ -19,7 +19,18 @@ const decorate = (method: HTTPMethod, path: string, options: RouteOptions, route
         const url = options && options.prefix ? options.prefix + path : path;
         router[method](url, async (ctx: Koa.Context) => {
             // 将参数直接传入
-            ctx.body = await target[property](ctx.request.body);
+            let param;
+            switch (method) {
+                case 'get':
+                    param = ctx.request.query;
+                    break;
+                case 'post':
+                    param = ctx.request.body;
+                    break;
+                default:
+                    param = {};
+            }
+            ctx.body = await target[property](param);
         });
     };
 };

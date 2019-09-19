@@ -11,8 +11,8 @@ export default class User {
 
     @post('/users')
     @validate({age: {type: 'number', max: 20, message: '年龄不符合要求'}})
-    public add(obj) {
-        users.push(obj);
+    public add(paramObj) {
+        users.push(paramObj);
         return {status: 200};
     }
 }
